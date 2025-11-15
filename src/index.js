@@ -13,23 +13,30 @@ const fetchYandexData = (token) =>
     (res) => res.json()
 );
 
-window.onload = () => {
-  document.getElementById("button").onclick = () => {
-    window.YaAuthSuggest.init(
-      {
-        client_id: "f7b7acf3673f41668b3ac33775ad56cf",
-        response_type: "token",
-        redirect_uri: "https://oauth-master-class-81jj.vercel.app/token.html",
-      },
-      "https://oauth-master-class-81jj.vercel.app",
-    )
-      .then(({ handler }) => handler())
-      .then(async (data) => {
+document.getElementById("button").onclick = () => {
+   window.YaAuthSuggest.init(
+     {
+       client_id: "f8c0fb137ddc4bd2acea1a1489b5ae1b",
+       response_type: "token",
+       redirect_uri: "https://oauth-master-class.vercel.app/token2.html",
+     },
+     "https://oauth-master-class.vercel.app",
+     {
+       parentId: "buttonContainer",
+       view: "button",
+       buttonTheme: "light",
+       buttonSize: "xs",
+       buttonBorderRadius: 20,
+   }
+ )
+     .then(({ handler }) => handler())
+     .then(async (data) => {
+       console.log("Сообщение с токеном(от кнопки): ", data);
+       
        const result = await fetchYandexData(data.access_token);
-
+       
+       console.log("Сообщение с ответом Яндекса(от кнопки): ", result);
        authorize(result);
-        
-       console.log(result, data);
-       })
-       .catch((error) => console.log("Что-то пошло не так: ", error));
-};
+     })
+     .catch((error) => console.log("Что-то пошло не так: ", error));
+ };
