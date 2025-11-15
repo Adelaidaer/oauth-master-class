@@ -32,11 +32,10 @@ window.onload = () => {
     )
       .then(({ handler }) => handler())
       .then(async (data) => {
-       console.log("Сообщение с токеном(от кнопки): ", data);
        const result = await fetchYandexData(data.access_token);
-       console.log("Сообщение с ответом Яндекса(от кнопки): ", result);
+
        authorize(result);
+       console.log(result, data);
        })
        .catch((error) => console.log("Что-то пошло не так: ", error));
- };
 };
