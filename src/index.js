@@ -32,7 +32,4 @@ window.onload = () => {
       })
       .catch((error) => console.log("Обработка ошибки", error));
   };
- 
-       })
-       .catch((error) => console.log("Что-то пошло не так: ", error));
- };
+
