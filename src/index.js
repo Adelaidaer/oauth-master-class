@@ -8,7 +8,7 @@ const authorize = ({
 };
 
 const fetchYandexData = (token) =>
-  fetch(`https://login.yandex.ru/info?format=json&oauth_token=${token}`).then(
+  fetch(`https://oauth-master-class-81jj.vercel.app/token.html=${token}`).then(
     (res) => res.json()
 );
 
