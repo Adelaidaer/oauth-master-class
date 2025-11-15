@@ -18,9 +18,9 @@ document.getElementById("button").onclick = () => {
      {
        client_id: "f7b7acf3673f41668b3ac33775ad56cf",
        response_type: "token",
-       redirect_uri: "oauth-master-class-81jj-git-main-4873s-projects-0818dc0e.vercel.app.html",
+       redirect_uri: "oauth-master-class-81jj-h85jv5178-4873s-projects-0818dc0e.vercel.app.html",
      },
-     "oauth-master-class-81jj-git-main-4873s-projects-0818dc0e.vercel.app",
+     "oauth-master-class-81jj-h85jv5178-4873s-projects-0818dc0e.vercel.app",
      {
        parentId: "buttonContainer",
        view: "button",
