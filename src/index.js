@@ -33,5 +33,27 @@ window.onload = () => {
       .catch((error) => console.log("Обработка ошибки", error));
   };
   document.getElementById("button").onclick = () => {
-      };
-};
+     window.YaAuthSuggest.init(
+     {
+       client_id: "f8c0fb137ddc4bd2acea1a1489b5ae1b",
+       response_type: "token",
+       redirect_uri: "https://oauth-master-class.vercel.app/token2.html",
+     },
+       "https://oauth-master-class.vercel.app",
+     {
+       parentId: "buttonContainer",
+       view: "button",
+       buttonTheme: "light",
+       buttonSize: "xs",
+       buttonBorderRadius: 20,
+       }
+     )
+       .then(({ handler }) => handler())
+       .then(async (data) => {
+         console.log("Сообщение с токеном(от кнопки): ", data);
+         const result = await fetchYandexData(data.access_token);
+         console.log("Сообщение с ответом Яндекса(от кнопки): ", result);
+         authorize(result);
+       })
+       .catch((error) => console.log("Что-то пошло не так: ", error));
+ };
