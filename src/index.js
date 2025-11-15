@@ -4,13 +4,15 @@ const authorize = ({
 }) => {
   const avatarHtml = `<div class="avatar" style="background-image:url(’https://avatars.mds.yandex.net/get-yapic/${defaultAvatarId}/islands-middle’)"></div>`;
   const nameHtml = `<div class="name">${displayName}</div>`;
-  document.getElementById("auth").innerHTML = `${avatarHTML}${nameHTML}`;
+  
+  document.getElementById("auth").innerHTML = `${avatarHtml}${nameHtml}`;
 };
 
 const fetchYandexData = (token) =>
   fetch(`https://login.yandex.ru/info?format=json&auth_token=${token}`).then(
     (res) => res.json()
 );
+
 window.onload = () => {
   document.getElementById("suggest").onclick = () => {
     YaAuthSuggest.init(
@@ -26,6 +28,7 @@ window.onload = () => {
        const result = await fetchYandexData(data.access_token);
 
        authorize(result);
+        
        console.log(result, data);
        })
        .catch((error) => console.log("Что-то пошло не так: ", error));
