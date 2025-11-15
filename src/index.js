@@ -18,9 +18,9 @@ document.getElementById("button").onclick = () => {
      {
        client_id: "f7b7acf3673f41668b3ac33775ad56cf",
        response_type: "token",
-       redirect_uri: "https://oauth.yandex.ru/verification_code/token.html",
+       redirect_uri: "https://oauth-master-class-81jj.vercel.app/token.html",
      },
-     "https://oauth.yandex.ru/verification_code",
+     "https://oauth-master-class-81jj.vercel.app",
      {
        parentId: "buttonContainer",
        view: "button",
