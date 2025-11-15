@@ -14,9 +14,6 @@ const fetchYandexData = (token) =>
 
 window.onload = () => {
   document.getElementById("suggest").onclick = () => {
-   YaAuthSuggest.init(
-      {
-  document.getElementById("button").onclick = () => {
     YaAuthSuggest.init(
       {
         client_id: "f7b7acf3673f41668b3ac33775ad56cf",
@@ -24,18 +21,17 @@ window.onload = () => {
         redirect_uri: "https://oauth-master-class-81jj.vercel.app/token.html",
       },
       "https://oauth-master-class-81jj.vercel.app",
-      {
-        view: "button",
-        parentId: "buttonContainer",
-        buttonSize: "m",
-        buttonView: "main",
-        buttonTheme: "light",
-        buttonBorderRadius: "0",
-        buttonIcon: "ya",
-      }
     )
       .then(({ handler }) => handler())
-      .then((data) => console.log("Сообщение с токеном", data))
+      .then(async (data) => { 
+        const result = await fetchYandexData(data.access_token);
+
+        authorize(result);
+
+        console.log(result, data);
+      })
       .catch((error) => console.log("Обработка ошибки", error));
   };
+  document.getElementById("button").onclick = () => {
+      };
 };
