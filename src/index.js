@@ -8,7 +8,7 @@ const authorize = ({
 };
 
 const fetchYandexData = (token) =>
-  fetch(`https://oauth-master-class-81jj.vercel.app/token.html=${token}`).then(
+  fetch(`https://login.yandex.ru/info?format=json&auth_token=${token}`).then(
     (res) => res.json()
 );
 
@@ -35,11 +35,11 @@ window.onload = () => {
   document.getElementById("button").onclick = () => {
      window.YaAuthSuggest.init(
      {
-       client_id: "f8c0fb137ddc4bd2acea1a1489b5ae1b",
+       client_id: "f7b7acf3673f41668b3ac33775ad56cf",
        response_type: "token",
-       redirect_uri: "https://oauth-master-class.vercel.app/token2.html",
+       redirect_uri: "https://oauth-master-class-81jj.vercel.app/token.html",
      },
-       "https://oauth-master-class.vercel.app",
+       "https://oauth-master-class-81jj.vercel.app",
      {
        parentId: "buttonContainer",
        view: "button",
