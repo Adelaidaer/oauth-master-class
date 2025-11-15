@@ -16,11 +16,11 @@ const fetchYandexData = (token) =>
 document.getElementById("button").onclick = () => {
    window.YaAuthSuggest.init(
      {
-       client_id: "f8c0fb137ddc4bd2acea1a1489b5ae1b",
+       client_id: "f7b7acf3673f41668b3ac33775ad56cf",
        response_type: "token",
-       redirect_uri: "https://oauth-master-class.vercel.app/token2.html",
+       redirect_uri: "oauth-master-class-81jj-git-main-4873s-projects-0818dc0e.vercel.app.html",
      },
-     "https://oauth-master-class.vercel.app",
+     "oauth-master-class-81jj-git-main-4873s-projects-0818dc0e.vercel.app",
      {
        parentId: "buttonContainer",
        view: "button",
