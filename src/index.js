@@ -19,7 +19,7 @@ window.onload = () => {
         response_type: "token",
         redirect_uri: "https://oauth-master-class-81jj.vercel.app/token.html",
       },
-      "https://oauth.yandex.ru/verification_code",
+      "https://oauth-master-class-81jj.vercel.app",
       {
         view: "button",
         parentId: "buttonContainer",
