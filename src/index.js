@@ -20,7 +20,7 @@ document.getElementById("button").onclick = () => {
        response_type: "token",
        redirect_uri: "oauth-master-class-81jj-h85jv5178-4873s-projects-0818dc0e.vercel.app.html",
      },
-     "oauth-master-class-81jj-h85jv5178-4873s-projects-0818dc0e.vercel.app",
+     "https://oauth-master-class-81jj.vercel.app/token.html",
      {
        parentId: "buttonContainer",
        view: "button",
